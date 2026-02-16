@@ -16,6 +16,12 @@ function divide (num1, num2){
 }
 
 function calculation (num1, num2, operationName){
+    //Validation
+    if (typeof num1 !== "number" || typeof num2 !== "number"){
+        return "Please provide a number";
+    }
+
+
     if (operationName === "add"){
         return add(num1, num2);
     }
@@ -36,7 +42,8 @@ function calculation (num1, num2, operationName){
 
 console.log("Cacualtion between 10 and 5:");
 console.log("-----------------------------");
-
+const test = calculation("Ten", 5, "add");
+console.log("Sum:", test);
 const sum = calculation(10, 5, "add");
 console.log("Sum:", sum);
 const difference = calculation(10, 5, "subtruct");
