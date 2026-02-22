@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Enable Disable</title>
+</head>
+<body>
+    <h2>writte delete to enable the button</h2>
+    <input type="text" placeholder="" id="input">
+    <button id="btn-delete" disabled>delete</button>
+
+    <script>
+        document.querySelector("#input")
+        .addEventListener("keyup",function(event){
+            const deleteButton = document.querySelector("#btn-delete")
+            
+            if (event.target.value === "delete"){
+                deleteButton.removeAttribute("disabled");
+                console.log("delete is written");
+            }
+            else{
+                console.log("something else");
+                deleteButton.setAttribute("disabled","true");
+            }
+        })
+        
+    </script>
+</body>
+</html>
