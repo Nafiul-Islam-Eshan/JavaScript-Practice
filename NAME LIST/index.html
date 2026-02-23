@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name list</title>
+    <style>
+        .para{
+            border: 1px solid blue;
+            border-radius: 10px;
+            background-color: lightcyan;
+            padding: 20px;
+            margin: 10px ;
+        }
+    </style>
+</head>
+<body>
+    <H1>ADD YOUR NAME</H1>
+    <input type="text" name="" id="name-input">
+    <button>Submit</button>
+
+    <div id="name-list">
+        
+    </div>
+
+    <script>
+        document.querySelector("button")
+        .addEventListener("click", (event) =>{
+            // get the text what is typed inside input
+            const inputValue = document.querySelector("input").value;
+            
+            // parent div
+            const div = document.querySelector("#name-list");
+
+            // creating p elemet 
+            const newP = document.createElement("p");
+
+            // inserting input value inside the p
+            newP.innerText = inputValue;
+
+            // appending p in the parent div as its child
+            div.appendChild(newP);
+
+            // adding class
+            newP.classList.add("para")
+        })
+    </script>
+</body>
+</html>
