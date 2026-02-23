@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event delegation</title>
+    <style>
+        .list-item{
+            border: 1px solid blue;
+            background-color: lightcyan;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Explore event delagation</h1>
+    <ol id="order-list">
+        <li class="list-item">List item 1</li>
+        <li class="list-item">List item 2</li>
+        <li class="list-item">List item 3</li>
+        <li class="list-item">List item 4</li>
+        <li class="list-item">List item 5</li>
+        <li class="list-item">List item 6</li>
+    </ol>
+    <button id="add-btn">Add new item</button>
+
+<script>
+    document.querySelector("#order-list")
+    .addEventListener("click", function(event){
+        event.target.parentNode.removeChild(event.target);
+    });
+
+    document.querySelector("#add-btn")
+    .addEventListener("click",function(){
+        const parentOl = document.querySelector("#order-list");
+        const totalChildOfOl = parentOl.children.length + 1;
+        const newListItem = document.createElement("li");
+        newListItem.innerText = "List Item " + totalChildOfOl;
+        newListItem.classList.add("list-item")
+        parentOl.appendChild(newListItem);
+
+    })
+</script>
+</body>
+</html>
