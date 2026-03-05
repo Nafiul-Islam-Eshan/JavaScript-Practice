@@ -6,9 +6,12 @@ function findVowel(sentence){
             foundVowels.push(char);
         }
     }
-    return foundVowels;
+    return {
+        foundVowels,
+        characters: foundVowels.length
+    };
 }
 
-let sentence = "Hello World!";
+let sentence = "Hello World! I am a Developer. I love coding, and exploring new ideas";
 let vowelsInSentence = findVowel(sentence);
 console.log("Vowels in the sentence: ", vowelsInSentence);
