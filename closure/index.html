@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure </title>
+
+    <!-- DaisyUI and Tailwind -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex gap-1 justify-center items-center w-[100vw] h-[100vh]">
+    <button id="green" class="btn btn-outline">Green</button>
+    <button id="blue"  class="btn btn-outline">Blue</button>
+    <button id="orange"  class="btn btn-outline">Orange</button>
+
+    <!-- Without using Closure -->
+    <script>
+        // document.getElementById("green").addEventListener("click",() => {
+        //     document.body.style.backgroundColor = "green";
+        // });
+        // document.getElementById("blue").addEventListener("click",() => {
+        //     document.body.style.backgroundColor = "blue";
+        // });
+        // document.getElementById("orange").addEventListener("click",() => {
+        //     document.body.style.backgroundColor = "orange";
+        // });
+    </script>
+
+    <!-- Using closure -->
+     <script>
+        function colorChanger (color) {
+            function innerFunc () {
+                document.body.style.backgroundColor = `${color}`;
+            };
+
+            return innerFunc;
+        };
+
+        document.getElementById("orange").addEventListener ("click", colorChanger("orange"));
+        document.getElementById("green").addEventListener ("click", colorChanger("green"));
+        document.getElementById("blue").addEventListener ("click", colorChanger("blue"));
+     </script>
+</body>
+</html>
