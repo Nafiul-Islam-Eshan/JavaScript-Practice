@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetching data </title>
+
+    <!-- DaisyUI and Tailwind -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="p-5">
+    <button onclick="loadData()" class="btn btn-success"> Data</button>
+    <button onclick="loadPosts()" class="btn btn-secondary">Posts</button>
+    <br> <br>
+    
+    <section id="postContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" >
+    </section>
+
+    <script src="./fetchData.js"></script>
+    <script src="./fetchPosts.js"></script>
+</body>
+</html>
